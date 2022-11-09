@@ -6,13 +6,17 @@ using Cinemachine;
 
 namespace Game.Scripts.Player
 {
+    
     [RequireComponent(typeof(CharacterController))]
     public class Player : MonoBehaviour
     {
+        private InputActions _input;
         private CharacterController _controller;
         private Animator _anim;
         [SerializeField]
         private float _speed = 5.0f;
+        [SerializeField]
+        private float _rotationSpeed = 20.0f;
         private bool _playerGrounded;
         [SerializeField]
         private Detonator _detonator;
@@ -37,6 +41,9 @@ namespace Game.Scripts.Player
 
         private void Start()
         {
+            _input = new InputActions();
+            _input.Player.Enable();
+
             _controller = GetComponent<CharacterController>();
 
             if (_controller == null)
@@ -57,13 +64,19 @@ namespace Game.Scripts.Player
 
         private void CalcutateMovement()
         {
+            var rotateDirection = _input.Player.Rotate.ReadValue<float>();
+            transform.Rotate(Vector3.up * Time.deltaTime * _rotationSpeed * rotateDirection);
+
+            var move = _input.Player.Walk.ReadValue<float>();
+            transform.Translate(Vector3.forward * Time.deltaTime * _speed * move);
+
             _playerGrounded = _controller.isGrounded;
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
+            //float h = Input.GetAxisRaw("Horizontal");
+            //float v = Input.GetAxisRaw("Vertical");
 
-            transform.Rotate(transform.up, h);
+            //transform.Rotate(transform.up, h);
 
-            var direction = transform.forward * v;
+            var direction = transform.forward * move;
             var velocity = direction * _speed;
 
 
