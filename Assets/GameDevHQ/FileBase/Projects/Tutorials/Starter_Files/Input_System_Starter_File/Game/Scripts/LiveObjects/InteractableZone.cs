@@ -56,17 +56,17 @@ namespace Game.Scripts.LiveObjects
             _input = new InputActions();
             _input.Player.Enable();
             _input.Player.Interactions.performed += Interactions_performed;
-            _input.Player.HoldInteraction.performed += HoldInteraction_performed;
+           // _input.Player.HoldInteraction.performed += HoldInteraction_performed;
         }
 
-        private void HoldInteraction_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
-        {
-            if (_inZone == true)
-            {
-                PerformHoldAction();
+        //private void HoldInteraction_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        //{
+        //    if (_inZone == true)
+        //    {
+        //        PerformHoldAction();
                 
-            }
-        }
+        //    }
+        //}
 
         private void Interactions_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
@@ -74,6 +74,7 @@ namespace Game.Scripts.LiveObjects
             {
                 CollectItems();
                 PerformAction();
+                PerformHoldAction();
             }
         }
 
