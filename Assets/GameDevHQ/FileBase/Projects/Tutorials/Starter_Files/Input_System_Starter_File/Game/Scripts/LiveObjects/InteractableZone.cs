@@ -9,6 +9,7 @@ namespace Game.Scripts.LiveObjects
 {
     public class InteractableZone : MonoBehaviour
     {
+        
         private InputActions _input;
 
         private enum ZoneType
@@ -56,25 +57,49 @@ namespace Game.Scripts.LiveObjects
             _input = new InputActions();
             _input.Player.Enable();
             _input.Player.Interactions.performed += Interactions_performed;
-           // _input.Player.HoldInteraction.performed += HoldInteraction_performed;
+            _input.Player.HoldInteraction.performed += HoldInteraction_performed;
+
         }
 
-        //private void HoldInteraction_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
-        //{
-        //    if (_inZone == true)
-        //    {
-        //        PerformHoldAction();
-                
-        //    }
-        //}
+        private void HoldInteraction_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            Debug.Log("holdperformed");
+            if (_inZone == true)
+            {
+                PerformHoldAction();
+
+            }
+        }
 
         private void Interactions_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
+            Debug.Log("performed");
             if (_inZone == true)
             {
-                CollectItems();
-                PerformAction();
-                PerformHoldAction();
+                switch (_zoneType)
+                {
+                    case ZoneType.Collectable:
+                        if (_itemsCollected == false)
+                        {
+                            CollectItems();
+                            _itemsCollected = true;
+                            UIManager.Instance.DisplayInteractableZoneMessage(false);
+                        }
+                        break;
+
+                    case ZoneType.Action:
+                        if (_actionPerformed == false)
+                        {
+                            PerformAction();
+                            _actionPerformed = true;
+                            UIManager.Instance.DisplayInteractableZoneMessage(false);
+                        }
+                        break;
+                }
+                //CollectItems();
+                // PerformAction();
+                //PerformHoldAction();
+
             }
         }
 
@@ -220,6 +245,7 @@ namespace Game.Scripts.LiveObjects
 
         private void PerformAction()
         {
+            
             foreach (var item in _zoneItems)
             {
                 item.SetActive(true);
@@ -252,6 +278,7 @@ namespace Game.Scripts.LiveObjects
             if (zoneID == _zoneID)
             {
                 _currentZoneID++;
+                Debug.Log(_currentZoneID);
                 onZoneInteractionComplete?.Invoke(this);
             }
         }

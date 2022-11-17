@@ -145,7 +145,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ddb0c3b2-6e43-485c-9e79-441fab9aae4c"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -292,14 +292,162 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             ""name"": ""ForkLift"",
             ""id"": ""35d18060-af29-4b13-8067-45311e3cef66"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Drive"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b240f88-b6e1-4805-9a3b-7bb1012062a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""e99c5c97-5729-494f-9337-a1a6d54a2fa4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Lift"",
+                    ""type"": ""Button"",
+                    ""id"": ""e2c82086-db24-4cd1-a135-ae917b66e3d3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Lower"",
+                    ""type"": ""Button"",
+                    ""id"": ""4736fa62-6bd0-4161-bf69-c89c31e77d08"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""85017a3c-d057-4263-a7ec-6203458e20c5"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drive"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b28d0bae-1d00-460a-a3c1-c19bd313519a"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""7229edac-741f-4bee-89c2-4a125312039e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""e504e98d-7965-46a0-8aaa-81f56db4a0d7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""f0a4e23a-9d93-4d9c-bf96-b204f24bf3f1"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d5f59529-593f-4f16-a30d-0803521aefb5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5fa1d87-0183-46c5-8559-913a5c6a08a5"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""858ff4e8-81a6-444c-9121-589382bb04a7"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         },
         {
             ""name"": ""DestructibleCrate"",
             ""id"": ""3f77b701-ef88-43cc-9e45-5e8844111610"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Break"",
+                    ""type"": ""Button"",
+                    ""id"": ""42f46d73-5ece-43ae-a82a-4cff822e95a8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=1)"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f1a6ef14-ccb7-471f-b1ab-3921d7eba6ae"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Break"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -317,8 +465,13 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Drone_ForwardBack = m_Drone.FindAction("ForwardBack", throwIfNotFound: true);
         // ForkLift
         m_ForkLift = asset.FindActionMap("ForkLift", throwIfNotFound: true);
+        m_ForkLift_Drive = m_ForkLift.FindAction("Drive", throwIfNotFound: true);
+        m_ForkLift_Rotate = m_ForkLift.FindAction("Rotate", throwIfNotFound: true);
+        m_ForkLift_Lift = m_ForkLift.FindAction("Lift", throwIfNotFound: true);
+        m_ForkLift_Lower = m_ForkLift.FindAction("Lower", throwIfNotFound: true);
         // DestructibleCrate
         m_DestructibleCrate = asset.FindActionMap("DestructibleCrate", throwIfNotFound: true);
+        m_DestructibleCrate_Break = m_DestructibleCrate.FindAction("Break", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -484,10 +637,18 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     // ForkLift
     private readonly InputActionMap m_ForkLift;
     private IForkLiftActions m_ForkLiftActionsCallbackInterface;
+    private readonly InputAction m_ForkLift_Drive;
+    private readonly InputAction m_ForkLift_Rotate;
+    private readonly InputAction m_ForkLift_Lift;
+    private readonly InputAction m_ForkLift_Lower;
     public struct ForkLiftActions
     {
         private @InputActions m_Wrapper;
         public ForkLiftActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Drive => m_Wrapper.m_ForkLift_Drive;
+        public InputAction @Rotate => m_Wrapper.m_ForkLift_Rotate;
+        public InputAction @Lift => m_Wrapper.m_ForkLift_Lift;
+        public InputAction @Lower => m_Wrapper.m_ForkLift_Lower;
         public InputActionMap Get() { return m_Wrapper.m_ForkLift; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -497,10 +658,34 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_ForkLiftActionsCallbackInterface != null)
             {
+                @Drive.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnDrive;
+                @Drive.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnDrive;
+                @Drive.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnDrive;
+                @Rotate.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnRotate;
+                @Rotate.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnRotate;
+                @Rotate.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnRotate;
+                @Lift.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLift;
+                @Lift.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLift;
+                @Lift.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLift;
+                @Lower.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLower;
+                @Lower.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLower;
+                @Lower.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLower;
             }
             m_Wrapper.m_ForkLiftActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @Drive.started += instance.OnDrive;
+                @Drive.performed += instance.OnDrive;
+                @Drive.canceled += instance.OnDrive;
+                @Rotate.started += instance.OnRotate;
+                @Rotate.performed += instance.OnRotate;
+                @Rotate.canceled += instance.OnRotate;
+                @Lift.started += instance.OnLift;
+                @Lift.performed += instance.OnLift;
+                @Lift.canceled += instance.OnLift;
+                @Lower.started += instance.OnLower;
+                @Lower.performed += instance.OnLower;
+                @Lower.canceled += instance.OnLower;
             }
         }
     }
@@ -509,10 +694,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     // DestructibleCrate
     private readonly InputActionMap m_DestructibleCrate;
     private IDestructibleCrateActions m_DestructibleCrateActionsCallbackInterface;
+    private readonly InputAction m_DestructibleCrate_Break;
     public struct DestructibleCrateActions
     {
         private @InputActions m_Wrapper;
         public DestructibleCrateActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Break => m_Wrapper.m_DestructibleCrate_Break;
         public InputActionMap Get() { return m_Wrapper.m_DestructibleCrate; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -522,10 +709,16 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_DestructibleCrateActionsCallbackInterface != null)
             {
+                @Break.started -= m_Wrapper.m_DestructibleCrateActionsCallbackInterface.OnBreak;
+                @Break.performed -= m_Wrapper.m_DestructibleCrateActionsCallbackInterface.OnBreak;
+                @Break.canceled -= m_Wrapper.m_DestructibleCrateActionsCallbackInterface.OnBreak;
             }
             m_Wrapper.m_DestructibleCrateActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @Break.started += instance.OnBreak;
+                @Break.performed += instance.OnBreak;
+                @Break.canceled += instance.OnBreak;
             }
         }
     }
@@ -545,8 +738,13 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     }
     public interface IForkLiftActions
     {
+        void OnDrive(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
+        void OnLift(InputAction.CallbackContext context);
+        void OnLower(InputAction.CallbackContext context);
     }
     public interface IDestructibleCrateActions
     {
+        void OnBreak(InputAction.CallbackContext context);
     }
 }

@@ -7023,7 +7023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lift: {fileID: 379650141}
   _steeringWheel: {fileID: 736602127}
-  _leftWheel: {fileID: 70192374}
+  _leftWheel: {fileID: 490088968}
   _rightWheel: {fileID: 1990168176}
   _rearWheels: {fileID: 70192374}
   _liftLowerLimit: {x: 0, y: 0.6, z: 1.47}
@@ -8740,6 +8740,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: eff6855c0fc6c43caacac07d92396c2a,
     type: 3}
   m_PrefabInstance: {fileID: 19577351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &490088968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: c14085171003ee2478ef40ebd5fcbee8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1833486800}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &490436478
 PrefabInstance:
@@ -13223,7 +13229,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -4.8794917e-26}
+  m_BoundingSphereOverride: {x: 7.6813502e+31, y: 14300.599, z: 1.81768e+31, w: 2.9498362e+29}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -18407,7 +18413,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972744894}
-  m_LocalRotation: {x: 0.22150682, y: 0.046708148, z: -0.0106225535, w: 0.9739817}
+  m_LocalRotation: {x: 0.22150683, y: 0.046706066, z: -0.0106220795, w: 0.97398174}
   m_LocalPosition: {x: -0.48177403, y: 4.5286655, z: -4.833789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20343,7 +20349,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -36148,7 +36154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c14085171003ee2478ef40ebd5fcbee8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.648
+      value: 0.686
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c14085171003ee2478ef40ebd5fcbee8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36176,7 +36182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c14085171003ee2478ef40ebd5fcbee8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.558
+      value: -4.507
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c14085171003ee2478ef40ebd5fcbee8, type: 3}
       propertyPath: m_LocalPosition.z
