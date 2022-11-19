@@ -145,7 +145,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ddb0c3b2-6e43-485c-9e79-441fab9aae4c"",
-                    ""path"": ""<Keyboard>/h"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -431,7 +431,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""id"": ""42f46d73-5ece-43ae-a82a-4cff822e95a8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=1)"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],

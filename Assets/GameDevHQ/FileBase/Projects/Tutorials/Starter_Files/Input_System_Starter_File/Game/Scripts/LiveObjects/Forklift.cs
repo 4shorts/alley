@@ -107,7 +107,7 @@ namespace Game.Scripts.LiveObjects
 
             
             var rotateDirection = _input.ForkLift.Rotate.ReadValue<float>();
-            transform.Rotate(Vector3.up * Time.deltaTime * rotateDirection * _speed * 3);
+            transform.Rotate(Vector3.up * Time.deltaTime * rotateDirection * _speed * 5);
 
             
 

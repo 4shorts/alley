@@ -4693,7 +4693,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 17.627327, y: 10.758061, z: 17.643656}
-  m_Center: {x: 0, y: 5.3790307, z: 0}
+  m_Center: {x: 0, y: 5.35, z: -0.77}
 --- !u!4 &263606772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ef20d1c5eefcf406485a3abb3a7ad9e2,
@@ -6023,7 +6023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _rotationSpeed: 50
+  _rotationSpeed: 200
   _detonator: {fileID: 2496590969500232579}
   _followCam: {fileID: 1266060213}
   _model: {fileID: 852618543}
@@ -13229,7 +13229,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.6813502e+31, y: 14300.599, z: 1.81768e+31, w: 2.9498362e+29}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: -15.898193, z: 9.67e-43, w: -15.897842}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

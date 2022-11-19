@@ -6,6 +6,8 @@ namespace Game.Scripts.LiveObjects
 {
     public class Crate : MonoBehaviour
     {
+        private InputActions _input;
+       
         [SerializeField] private float _punchDelay;
         [SerializeField] private GameObject _wholeCrate, _brokenCrate;
         [SerializeField] private Rigidbody[] _pieces;
@@ -30,50 +32,75 @@ namespace Game.Scripts.LiveObjects
                 _isReadyToBreak = true;
             }
 
-            if (_isReadyToBreak && zone.GetZoneID() == 6) //Crate zone            
-            {
-                if (_brakeOff.Count > 0)
-                {
-                    BreakPart();
-                    StartCoroutine(PunchDelay());
-                }
-                else if(_brakeOff.Count == 0)
-                {
-                    _isReadyToBreak = false;
-                    _crateCollider.enabled = false;
-                    _interactableZone.CompleteTask(6);
-                    Debug.Log("Completely Busted");
-                }
-            }
+            //if (_isReadyToBreak && zone.GetZoneID() == 6) //Crate zone            
+            //{
+            //    if (_brakeOff.Count > 0)
+            //    {
+            //        BreakPart();
+            //        StartCoroutine(PunchDelay());
+            //    }
+            //    if (_brakeOff.Count == 0)
+            //    {
+            //        _isReadyToBreak = false;
+            //        _crateCollider.enabled = false;
+            //        _interactableZone.CompleteTask(6);
+            //        Debug.Log("Completely Busted");
+            //    }
+            //}
         }
 
         private void Start()
         {
+            _input = new InputActions();
+            _input.DestructibleCrate.Enable();
+            _input.DestructibleCrate.Break.performed += Break_performed;
+            
             _brakeOff.AddRange(_pieces);
             
         }
 
-
-
-        public void BreakPart()
+        private void Break_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
-            int rng = Random.Range(0, _brakeOff.Count);
-            _brakeOff[rng].constraints = RigidbodyConstraints.None;
-            _brakeOff[rng].AddForce(new Vector3(1f, 1f, 1f), ForceMode.Force);
-            _brakeOff.Remove(_brakeOff[rng]);            
-        }
-
-        IEnumerator PunchDelay()
-        {
-            float delayTimer = 0;
-            while (delayTimer < _punchDelay)
+            if (_brakeOff.Count > 0)
             {
-                yield return new WaitForEndOfFrame();
-                delayTimer += Time.deltaTime;
+                int rng = Random.Range(0, _brakeOff.Count);
+                _brakeOff[rng].constraints = RigidbodyConstraints.None;
+                _brakeOff[rng].AddForce(new Vector3(1f, 1f, 1f), ForceMode.Force);
+                _brakeOff.Remove(_brakeOff[rng]);
+                _interactableZone.ResetAction(6);
+            }
+            if (_brakeOff.Count == 0)
+            {
+                _isReadyToBreak = false;
+                _crateCollider.enabled = false;
+                _interactableZone.CompleteTask(6);
+                Debug.Log("Completely Busted");
             }
 
-            _interactableZone.ResetAction(6);
         }
+
+
+
+
+        //public void BreakPart()
+        //{
+        //    int rng = Random.Range(0, _brakeOff.Count);
+        //    _brakeOff[rng].constraints = RigidbodyConstraints.None;
+        //    _brakeOff[rng].AddForce(new Vector3(1f, 1f, 1f), ForceMode.Force);
+        //    _brakeOff.Remove(_brakeOff[rng]);
+        //}
+
+        //IEnumerator PunchDelay()
+        //{
+        //    float delayTimer = 0;
+        //    while (delayTimer < _punchDelay)
+        //    {
+        //        yield return new WaitForEndOfFrame();
+        //        delayTimer += Time.deltaTime;
+        //    }
+
+        //    _interactableZone.ResetAction(6);
+        //}
 
         private void OnDisable()
         {
