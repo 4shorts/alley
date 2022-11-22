@@ -223,7 +223,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""ddb0c3b2-6e43-485c-9e79-441fab9aae4c"",
                     ""path"": ""<Keyboard>/h"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=3)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""HoldInteraction"",
@@ -257,18 +257,36 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UpDown"",
+                    ""name"": ""Lift"",
                     ""type"": ""Button"",
-                    ""id"": ""8d3c5aba-7232-4257-b2f8-6524a22f1da5"",
+                    ""id"": ""f0bf82a0-98fb-4dd7-8b71-a49792cc10b2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ForwardBack"",
+                    ""name"": ""Lower"",
                     ""type"": ""Button"",
-                    ""id"": ""4d71b4b9-d054-4c78-96af-2cb881abd314"",
+                    ""id"": ""42dafe55-c90d-4b04-8aa8-81610abb9505"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tilt"",
+                    ""type"": ""Value"",
+                    ""id"": ""bf5795bb-455e-4a8d-8093-e654690b4d61"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Leave"",
+                    ""type"": ""Button"",
+                    ""id"": ""d73ec86a-dad1-4773-a283-db91bcf0e7f5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -343,136 +361,92 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""a81e514c-92e6-4e1a-b142-36f3364f2da0"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""UpDown"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""27d89b12-9ed0-4656-9f58-bb86daa729aa"",
-                    ""path"": ""<Keyboard>/v"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""UpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""36a19a33-aa51-41eb-b217-d2d0861bcd3f"",
+                    ""name"": """",
+                    ""id"": ""9e22ae73-67cc-460c-addd-8e450343861d"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UpDown"",
+                    ""action"": ""Lift"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""82a64409-a4d7-4125-9bc3-868ec8b1a708"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""9adc23e7-4f7c-4e63-a410-4137b6b0ab28"",
+                    ""path"": ""<Keyboard>/v"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UpDown"",
+                    ""action"": ""Lower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""ee8fea10-0177-49ec-8b2a-c6f869ad01ba"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tilt"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""5d2921cb-b614-4fb9-9b9b-3cba6936daa1"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""UpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""84fdd220-0709-4a72-8911-9e517ce2ab59"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""UpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""79b5e802-0648-40ab-a149-e5b280e24f6f"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ForwardBack"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""5fe2e2fc-8fc1-40d2-b0ad-1a69fc63cb3d"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ForwardBack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""dcee49aa-02aa-40de-b1e9-2bab04d6cc07"",
+                    ""name"": ""up"",
+                    ""id"": ""4ed4de73-c807-4d37-bd6c-dcd7b1532f18"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ForwardBack"",
+                    ""action"": ""Tilt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""e949c10d-e074-4035-aa0c-d533b56d8ac9"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""down"",
+                    ""id"": ""e66d5780-c863-415c-8ab9-1584f7da0519"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ForwardBack"",
-                    ""isComposite"": true,
+                    ""action"": ""Tilt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e0edd463-d32c-44b2-b67c-5000dd065f4a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tilt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""039204c8-5a56-4d17-8dfd-e4178def4513"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tilt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b4ff83e-edbe-4975-8635-2720b8bf3b96"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""0c47c4c6-108a-435d-835f-203f20a8fbe8"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ForwardBack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""1752790b-162b-4a1a-bb6c-d1d6bf1a253b"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ForwardBack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -511,6 +485,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""name"": ""Lower"",
                     ""type"": ""Button"",
                     ""id"": ""4736fa62-6bd0-4161-bf69-c89c31e77d08"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Leave"",
+                    ""type"": ""Button"",
+                    ""id"": ""f9cf0f79-250b-4ee0-8aee-412ba6222401"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -693,6 +676,17 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Lower"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d0d4560d-d788-4716-a57d-4661371011ef"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -734,6 +728,54 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Laptop"",
+            ""id"": ""eee43c76-934d-4a9f-be54-5c3d9bb5bfdb"",
+            ""actions"": [
+                {
+                    ""name"": ""CameraSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a383fe1-398b-4272-bff3-88589a42ae70"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Leave"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea4e3875-bfe4-4c0a-80db-090d030d2e02"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3f0efec3-439e-41ba-a12b-cdaa80895356"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99542f25-a06d-4e22-bc70-a6983f7acdeb"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -747,17 +789,24 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         // Drone
         m_Drone = asset.FindActionMap("Drone", throwIfNotFound: true);
         m_Drone_Rotate = m_Drone.FindAction("Rotate", throwIfNotFound: true);
-        m_Drone_UpDown = m_Drone.FindAction("UpDown", throwIfNotFound: true);
-        m_Drone_ForwardBack = m_Drone.FindAction("ForwardBack", throwIfNotFound: true);
+        m_Drone_Lift = m_Drone.FindAction("Lift", throwIfNotFound: true);
+        m_Drone_Lower = m_Drone.FindAction("Lower", throwIfNotFound: true);
+        m_Drone_Tilt = m_Drone.FindAction("Tilt", throwIfNotFound: true);
+        m_Drone_Leave = m_Drone.FindAction("Leave", throwIfNotFound: true);
         // ForkLift
         m_ForkLift = asset.FindActionMap("ForkLift", throwIfNotFound: true);
         m_ForkLift_Drive = m_ForkLift.FindAction("Drive", throwIfNotFound: true);
         m_ForkLift_Rotate = m_ForkLift.FindAction("Rotate", throwIfNotFound: true);
         m_ForkLift_Lift = m_ForkLift.FindAction("Lift", throwIfNotFound: true);
         m_ForkLift_Lower = m_ForkLift.FindAction("Lower", throwIfNotFound: true);
+        m_ForkLift_Leave = m_ForkLift.FindAction("Leave", throwIfNotFound: true);
         // DestructibleCrate
         m_DestructibleCrate = asset.FindActionMap("DestructibleCrate", throwIfNotFound: true);
         m_DestructibleCrate_Break = m_DestructibleCrate.FindAction("Break", throwIfNotFound: true);
+        // Laptop
+        m_Laptop = asset.FindActionMap("Laptop", throwIfNotFound: true);
+        m_Laptop_CameraSwitch = m_Laptop.FindAction("CameraSwitch", throwIfNotFound: true);
+        m_Laptop_Leave = m_Laptop.FindAction("Leave", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -875,15 +924,19 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Drone;
     private IDroneActions m_DroneActionsCallbackInterface;
     private readonly InputAction m_Drone_Rotate;
-    private readonly InputAction m_Drone_UpDown;
-    private readonly InputAction m_Drone_ForwardBack;
+    private readonly InputAction m_Drone_Lift;
+    private readonly InputAction m_Drone_Lower;
+    private readonly InputAction m_Drone_Tilt;
+    private readonly InputAction m_Drone_Leave;
     public struct DroneActions
     {
         private @InputActions m_Wrapper;
         public DroneActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Rotate => m_Wrapper.m_Drone_Rotate;
-        public InputAction @UpDown => m_Wrapper.m_Drone_UpDown;
-        public InputAction @ForwardBack => m_Wrapper.m_Drone_ForwardBack;
+        public InputAction @Lift => m_Wrapper.m_Drone_Lift;
+        public InputAction @Lower => m_Wrapper.m_Drone_Lower;
+        public InputAction @Tilt => m_Wrapper.m_Drone_Tilt;
+        public InputAction @Leave => m_Wrapper.m_Drone_Leave;
         public InputActionMap Get() { return m_Wrapper.m_Drone; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -896,12 +949,18 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Rotate.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnRotate;
                 @Rotate.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnRotate;
                 @Rotate.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnRotate;
-                @UpDown.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnUpDown;
-                @UpDown.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnUpDown;
-                @UpDown.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnUpDown;
-                @ForwardBack.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnForwardBack;
-                @ForwardBack.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnForwardBack;
-                @ForwardBack.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnForwardBack;
+                @Lift.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnLift;
+                @Lift.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnLift;
+                @Lift.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnLift;
+                @Lower.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnLower;
+                @Lower.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnLower;
+                @Lower.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnLower;
+                @Tilt.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnTilt;
+                @Tilt.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnTilt;
+                @Tilt.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnTilt;
+                @Leave.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnLeave;
+                @Leave.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnLeave;
+                @Leave.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnLeave;
             }
             m_Wrapper.m_DroneActionsCallbackInterface = instance;
             if (instance != null)
@@ -909,12 +968,18 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Rotate.started += instance.OnRotate;
                 @Rotate.performed += instance.OnRotate;
                 @Rotate.canceled += instance.OnRotate;
-                @UpDown.started += instance.OnUpDown;
-                @UpDown.performed += instance.OnUpDown;
-                @UpDown.canceled += instance.OnUpDown;
-                @ForwardBack.started += instance.OnForwardBack;
-                @ForwardBack.performed += instance.OnForwardBack;
-                @ForwardBack.canceled += instance.OnForwardBack;
+                @Lift.started += instance.OnLift;
+                @Lift.performed += instance.OnLift;
+                @Lift.canceled += instance.OnLift;
+                @Lower.started += instance.OnLower;
+                @Lower.performed += instance.OnLower;
+                @Lower.canceled += instance.OnLower;
+                @Tilt.started += instance.OnTilt;
+                @Tilt.performed += instance.OnTilt;
+                @Tilt.canceled += instance.OnTilt;
+                @Leave.started += instance.OnLeave;
+                @Leave.performed += instance.OnLeave;
+                @Leave.canceled += instance.OnLeave;
             }
         }
     }
@@ -927,6 +992,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_ForkLift_Rotate;
     private readonly InputAction m_ForkLift_Lift;
     private readonly InputAction m_ForkLift_Lower;
+    private readonly InputAction m_ForkLift_Leave;
     public struct ForkLiftActions
     {
         private @InputActions m_Wrapper;
@@ -935,6 +1001,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_ForkLift_Rotate;
         public InputAction @Lift => m_Wrapper.m_ForkLift_Lift;
         public InputAction @Lower => m_Wrapper.m_ForkLift_Lower;
+        public InputAction @Leave => m_Wrapper.m_ForkLift_Leave;
         public InputActionMap Get() { return m_Wrapper.m_ForkLift; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -956,6 +1023,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Lower.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLower;
                 @Lower.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLower;
                 @Lower.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLower;
+                @Leave.started -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLeave;
+                @Leave.performed -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLeave;
+                @Leave.canceled -= m_Wrapper.m_ForkLiftActionsCallbackInterface.OnLeave;
             }
             m_Wrapper.m_ForkLiftActionsCallbackInterface = instance;
             if (instance != null)
@@ -972,6 +1042,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Lower.started += instance.OnLower;
                 @Lower.performed += instance.OnLower;
                 @Lower.canceled += instance.OnLower;
+                @Leave.started += instance.OnLeave;
+                @Leave.performed += instance.OnLeave;
+                @Leave.canceled += instance.OnLeave;
             }
         }
     }
@@ -1009,6 +1082,47 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         }
     }
     public DestructibleCrateActions @DestructibleCrate => new DestructibleCrateActions(this);
+
+    // Laptop
+    private readonly InputActionMap m_Laptop;
+    private ILaptopActions m_LaptopActionsCallbackInterface;
+    private readonly InputAction m_Laptop_CameraSwitch;
+    private readonly InputAction m_Laptop_Leave;
+    public struct LaptopActions
+    {
+        private @InputActions m_Wrapper;
+        public LaptopActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CameraSwitch => m_Wrapper.m_Laptop_CameraSwitch;
+        public InputAction @Leave => m_Wrapper.m_Laptop_Leave;
+        public InputActionMap Get() { return m_Wrapper.m_Laptop; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LaptopActions set) { return set.Get(); }
+        public void SetCallbacks(ILaptopActions instance)
+        {
+            if (m_Wrapper.m_LaptopActionsCallbackInterface != null)
+            {
+                @CameraSwitch.started -= m_Wrapper.m_LaptopActionsCallbackInterface.OnCameraSwitch;
+                @CameraSwitch.performed -= m_Wrapper.m_LaptopActionsCallbackInterface.OnCameraSwitch;
+                @CameraSwitch.canceled -= m_Wrapper.m_LaptopActionsCallbackInterface.OnCameraSwitch;
+                @Leave.started -= m_Wrapper.m_LaptopActionsCallbackInterface.OnLeave;
+                @Leave.performed -= m_Wrapper.m_LaptopActionsCallbackInterface.OnLeave;
+                @Leave.canceled -= m_Wrapper.m_LaptopActionsCallbackInterface.OnLeave;
+            }
+            m_Wrapper.m_LaptopActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CameraSwitch.started += instance.OnCameraSwitch;
+                @CameraSwitch.performed += instance.OnCameraSwitch;
+                @CameraSwitch.canceled += instance.OnCameraSwitch;
+                @Leave.started += instance.OnLeave;
+                @Leave.performed += instance.OnLeave;
+                @Leave.canceled += instance.OnLeave;
+            }
+        }
+    }
+    public LaptopActions @Laptop => new LaptopActions(this);
     public interface IPlayerActions
     {
         void OnRotate(InputAction.CallbackContext context);
@@ -1019,8 +1133,10 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     public interface IDroneActions
     {
         void OnRotate(InputAction.CallbackContext context);
-        void OnUpDown(InputAction.CallbackContext context);
-        void OnForwardBack(InputAction.CallbackContext context);
+        void OnLift(InputAction.CallbackContext context);
+        void OnLower(InputAction.CallbackContext context);
+        void OnTilt(InputAction.CallbackContext context);
+        void OnLeave(InputAction.CallbackContext context);
     }
     public interface IForkLiftActions
     {
@@ -1028,9 +1144,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnLift(InputAction.CallbackContext context);
         void OnLower(InputAction.CallbackContext context);
+        void OnLeave(InputAction.CallbackContext context);
     }
     public interface IDestructibleCrateActions
     {
         void OnBreak(InputAction.CallbackContext context);
+    }
+    public interface ILaptopActions
+    {
+        void OnCameraSwitch(InputAction.CallbackContext context);
+        void OnLeave(InputAction.CallbackContext context);
     }
 }

@@ -24,7 +24,13 @@ namespace Game.Scripts.LiveObjects
 
         private void InteractableZone_onZoneInteractionComplete(InteractableZone zone)
         {
-            
+            if (_isReadyToBreak && zone.GetZoneID() == 6)
+            {
+                _input = new InputActions();
+                _input.DestructibleCrate.Enable();
+                _input.DestructibleCrate.Break.performed += Break_performed;
+            }
+
             if (_isReadyToBreak == false && _brakeOff.Count >0)
             {
                 _wholeCrate.SetActive(false);
@@ -51,9 +57,7 @@ namespace Game.Scripts.LiveObjects
 
         private void Start()
         {
-            _input = new InputActions();
-            _input.DestructibleCrate.Enable();
-            _input.DestructibleCrate.Break.performed += Break_performed;
+           
             
             _brakeOff.AddRange(_pieces);
             

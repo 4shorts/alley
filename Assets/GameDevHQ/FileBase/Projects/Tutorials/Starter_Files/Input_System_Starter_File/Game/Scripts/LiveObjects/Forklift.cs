@@ -40,9 +40,15 @@ namespace Game.Scripts.LiveObjects
             _input.ForkLift.Lift.canceled += canceled;
             _input.ForkLift.Lower.started += Lower_started;
             _input.ForkLift.Lower.canceled += canceled;
+            _input.ForkLift.Leave.performed += Leave_performed;
 
            
            
+        }
+
+        private void Leave_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            ExitDriveMode();
         }
 
         private void canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -87,8 +93,8 @@ namespace Game.Scripts.LiveObjects
             {
                 LiftControls();
                 CalcutateMovement();
-                if (Input.GetKeyDown(KeyCode.Escape))
-                    ExitDriveMode();
+                //if (Input.GetKeyDown(KeyCode.Escape))
+                //    ExitDriveMode();
             }
 
         }

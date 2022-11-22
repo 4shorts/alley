@@ -9,6 +9,7 @@ namespace Game.Scripts.LiveObjects
 {
     public class Laptop : MonoBehaviour
     {
+        private InputActions _input;
         [SerializeField]
         private Slider _progressBar;
         [SerializeField]
@@ -25,36 +26,53 @@ namespace Game.Scripts.LiveObjects
 
         private void OnEnable()
         {
+            _input = new InputActions();
+            
             InteractableZone.onHoldStarted += InteractableZone_onHoldStarted;
             InteractableZone.onHoldEnded += InteractableZone_onHoldEnded;
         }
 
-        private void Update()
+        private void CameraSwitch_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (_hacked == true)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    var previous = _activeCamera;
-                    _activeCamera++;
+
+            var previous = _activeCamera;
+            _activeCamera++;
 
 
-                    if (_activeCamera >= _cameras.Length)
-                        _activeCamera = 0;
+            if (_activeCamera >= _cameras.Length)
+                _activeCamera = 0;
 
 
-                    _cameras[_activeCamera].Priority = 11;
-                    _cameras[previous].Priority = 9;
-                }
-
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    _hacked = false;
-                    onHackEnded?.Invoke();
-                    ResetCameras();
-                }
-            }
+            _cameras[_activeCamera].Priority = 11;
+            _cameras[previous].Priority = 9;
         }
+
+        //private void Update()
+        //{
+        //    if (_hacked == true)
+        //    {
+        //        if (Input.GetKeyDown(KeyCode.E))
+        //        {
+        //            var previous = _activeCamera;
+        //            _activeCamera++;
+
+
+        //            if (_activeCamera >= _cameras.Length)
+        //                _activeCamera = 0;
+
+
+        //            _cameras[_activeCamera].Priority = 11;
+        //            _cameras[previous].Priority = 9;
+        //        }
+
+        //        if (Input.GetKeyDown(KeyCode.Escape))
+        //        {
+        //            _hacked = false;
+        //            onHackEnded?.Invoke();
+        //            ResetCameras();
+        //        }
+        //    }
+        //}
 
         void ResetCameras()
         {
@@ -100,6 +118,9 @@ namespace Game.Scripts.LiveObjects
             //successfully hacked
             _hacked = true;
             _interactableZone.CompleteTask(3);
+            _input.Laptop.Enable();
+            _input.Laptop.CameraSwitch.performed += CameraSwitch_performed;
+            _input.Laptop.Leave.performed += Leave_performed;
 
             //hide progress bar
             _progressBar.gameObject.SetActive(false);
@@ -107,7 +128,14 @@ namespace Game.Scripts.LiveObjects
             //enable Vcam1
             _cameras[0].Priority = 11;
         }
-        
+
+        private void Leave_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _hacked = false;
+            onHackEnded?.Invoke();
+            ResetCameras();
+        }
+
         private void OnDisable()
         {
             InteractableZone.onHoldStarted -= InteractableZone_onHoldStarted;

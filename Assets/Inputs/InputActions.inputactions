@@ -201,7 +201,7 @@
                     "name": "",
                     "id": "ddb0c3b2-6e43-485c-9e79-441fab9aae4c",
                     "path": "<Keyboard>/h",
-                    "interactions": "",
+                    "interactions": "Hold(duration=3)",
                     "processors": "",
                     "groups": "",
                     "action": "HoldInteraction",
@@ -235,18 +235,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UpDown",
+                    "name": "Lift",
                     "type": "Button",
-                    "id": "8d3c5aba-7232-4257-b2f8-6524a22f1da5",
+                    "id": "f0bf82a0-98fb-4dd7-8b71-a49792cc10b2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ForwardBack",
+                    "name": "Lower",
                     "type": "Button",
-                    "id": "4d71b4b9-d054-4c78-96af-2cb881abd314",
+                    "id": "42dafe55-c90d-4b04-8aa8-81610abb9505",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Tilt",
+                    "type": "Value",
+                    "id": "bf5795bb-455e-4a8d-8093-e654690b4d61",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Leave",
+                    "type": "Button",
+                    "id": "d73ec86a-dad1-4773-a283-db91bcf0e7f5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -321,136 +339,92 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "a81e514c-92e6-4e1a-b142-36f3364f2da0",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UpDown",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "27d89b12-9ed0-4656-9f58-bb86daa729aa",
-                    "path": "<Keyboard>/v",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UpDown",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "36a19a33-aa51-41eb-b217-d2d0861bcd3f",
+                    "name": "",
+                    "id": "9e22ae73-67cc-460c-addd-8e450343861d",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UpDown",
+                    "action": "Lift",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "82a64409-a4d7-4125-9bc3-868ec8b1a708",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "9adc23e7-4f7c-4e63-a410-4137b6b0ab28",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UpDown",
+                    "action": "Lower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "ee8fea10-0177-49ec-8b2a-c6f869ad01ba",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tilt",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "5d2921cb-b614-4fb9-9b9b-3cba6936daa1",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UpDown",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "84fdd220-0709-4a72-8911-9e517ce2ab59",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UpDown",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "79b5e802-0648-40ab-a149-e5b280e24f6f",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ForwardBack",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "5fe2e2fc-8fc1-40d2-b0ad-1a69fc63cb3d",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ForwardBack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "dcee49aa-02aa-40de-b1e9-2bab04d6cc07",
+                    "name": "up",
+                    "id": "4ed4de73-c807-4d37-bd6c-dcd7b1532f18",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ForwardBack",
+                    "action": "Tilt",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "e949c10d-e074-4035-aa0c-d533b56d8ac9",
-                    "path": "1DAxis",
+                    "name": "down",
+                    "id": "e66d5780-c863-415c-8ab9-1584f7da0519",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ForwardBack",
-                    "isComposite": true,
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e0edd463-d32c-44b2-b67c-5000dd065f4a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "039204c8-5a56-4d17-8dfd-e4178def4513",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4b4ff83e-edbe-4975-8635-2720b8bf3b96",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Leave",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "0c47c4c6-108a-435d-835f-203f20a8fbe8",
-                    "path": "<Gamepad>/dpad/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ForwardBack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "1752790b-162b-4a1a-bb6c-d1d6bf1a253b",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ForwardBack",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
@@ -489,6 +463,15 @@
                     "name": "Lower",
                     "type": "Button",
                     "id": "4736fa62-6bd0-4161-bf69-c89c31e77d08",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Leave",
+                    "type": "Button",
+                    "id": "f9cf0f79-250b-4ee0-8aee-412ba6222401",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -671,6 +654,17 @@
                     "action": "Lower",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0d4560d-d788-4716-a57d-4661371011ef",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Leave",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -708,6 +702,54 @@
                     "processors": "",
                     "groups": "",
                     "action": "Break",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Laptop",
+            "id": "eee43c76-934d-4a9f-be54-5c3d9bb5bfdb",
+            "actions": [
+                {
+                    "name": "CameraSwitch",
+                    "type": "Button",
+                    "id": "8a383fe1-398b-4272-bff3-88589a42ae70",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Leave",
+                    "type": "Button",
+                    "id": "ea4e3875-bfe4-4c0a-80db-090d030d2e02",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3f0efec3-439e-41ba-a12b-cdaa80895356",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraSwitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99542f25-a06d-4e22-bc70-a6983f7acdeb",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Leave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

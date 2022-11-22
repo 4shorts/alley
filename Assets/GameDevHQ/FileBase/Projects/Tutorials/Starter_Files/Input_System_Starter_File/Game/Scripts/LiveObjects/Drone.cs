@@ -9,6 +9,8 @@ namespace Game.Scripts.LiveObjects
 {
     public class Drone : MonoBehaviour
     {
+        private Vector2 _tiltDirection;
+        private int _liftDirection = 0;
         private InputActions _input;
 
         private enum Tilt
@@ -36,7 +38,37 @@ namespace Game.Scripts.LiveObjects
         {
             _input = new InputActions();
             _input.Drone.Enable();
+            _input.Drone.Lift.performed += Lift_performed;
+            _input.Drone.Lift.canceled += canceled;
+            _input.Drone.Lower.performed += Lower_performed;
+            _input.Drone.Lower.canceled += canceled;
+            _input.Drone.Leave.performed += Leave_performed;
+            
+           
         }
+
+        private void Leave_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _inFlightMode = false;
+            onExitFlightmode?.Invoke();
+            ExitFlightMode();
+        }
+
+        private void Lower_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _liftDirection = -1;
+        }
+
+        private void canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _liftDirection = 0;
+        }
+
+        private void Lift_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _liftDirection = 1;
+        }
+
 
         private void OnEnable()
         {
@@ -70,32 +102,30 @@ namespace Game.Scripts.LiveObjects
                 CalculateTilt();
                 CalculateMovementUpdate();
 
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    _inFlightMode = false;
-                    onExitFlightmode?.Invoke();
-                    ExitFlightMode();
-                }
+                //if (Input.GetKeyDown(KeyCode.Escape))
+                //{
+                //    _inFlightMode = false;
+                //    onExitFlightmode?.Invoke();
+                //    ExitFlightMode();
+                //}
             }
         }
 
-        //private void FixedUpdate()
-        //{
-        //    _rigidbody.AddForce(transform.up * (9.81f), ForceMode.Acceleration);
-        //    if (_inFlightMode)
-        //        CalculateMovementFixedUpdate();
-        //}
+        private void FixedUpdate()
+        {
+            _rigidbody.AddForce(transform.up * (9.81f), ForceMode.Acceleration);
+            if (_inFlightMode)
+                CalculateMovementFixedUpdate();
+        }
 
         private void CalculateMovementUpdate()
         {
             var rotateDirection = _input.Drone.Rotate.ReadValue<float>();
             transform.Rotate(Vector3.up * Time.deltaTime * rotateDirection * _speed*10);
 
-            var move = _input.Drone.ForwardBack.ReadValue<float>();
-            transform.Translate(Vector3.forward * Time.deltaTime * move * _speed);
+           
 
-            var lift = _input.Drone.UpDown.ReadValue<float>();
-            transform.Translate(Vector3.up * Time.deltaTime * lift * _speed);
+            
 
             //if (Input.GetKey(KeyCode.LeftArrow))
             //{
@@ -111,28 +141,31 @@ namespace Game.Scripts.LiveObjects
             //}
         }
 
-        //private void CalculateMovementFixedUpdate()
-        //{
 
-        //    if (Input.GetKey(KeyCode.Space))
-        //    {
-        //        _rigidbody.AddForce(transform.up * _speed, ForceMode.Acceleration);
-        //    }
-        //    if (Input.GetKey(KeyCode.V))
-        //    {
-        //        _rigidbody.AddForce(-transform.up * _speed, ForceMode.Acceleration);
-        //    }
-        //}
-
-        private void CalculateTilt()
+        private void CalculateMovementFixedUpdate()
         {
-            if (Input.GetKey(KeyCode.A))
+
+
+            _rigidbody.AddForce(transform.up * _speed * _liftDirection, ForceMode.Acceleration);
+           
+        }
+            
+           
+
+
+private void CalculateTilt()
+        {
+            _tiltDirection = _input.Drone.Tilt.ReadValue<Vector2>();
+
+
+
+            if (_tiltDirection == Vector2.left)
                 transform.rotation = Quaternion.Euler(00, transform.localRotation.eulerAngles.y, 30);
-            else if (Input.GetKey(KeyCode.D))
+            else if (_tiltDirection == Vector2.right)
                 transform.rotation = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, -30);
-            else if (Input.GetKey(KeyCode.W))
+            else if (_tiltDirection == Vector2.up)
                 transform.rotation = Quaternion.Euler(30, transform.localRotation.eulerAngles.y, 0);
-            else if (Input.GetKey(KeyCode.S))
+            else if (_tiltDirection == Vector2.down)
                 transform.rotation = Quaternion.Euler(-30, transform.localRotation.eulerAngles.y, 0);
             else
                 transform.rotation = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, 0);
